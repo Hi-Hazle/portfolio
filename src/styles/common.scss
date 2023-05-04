@@ -1,0 +1,36 @@
+@import 'variables';
+
+body {
+  font: 100% $fontStack;
+  color: $primaryColor;
+  background: $primaryBgPattern;
+  background-color: $primaryBg;
+}
+
+.inner {
+  @include marginCenter;
+  display: block;
+  width: $contentSize;
+}
+
+.btnList {
+  display: flex;
+  gap: 15px;
+}
+
+.button {
+  @include flexCenter;
+  width: 255px;
+  height: 50px;
+  border: solid 2px #ff006a;
+  color: #fff;
+  font-size: $secondaryFontSize;
+
+  &.contained {
+    background-color: #ff006a;
+  }
+
+  &.outlined {
+    color: #ff006a;
+  }
+}

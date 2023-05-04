@@ -1,0 +1,53 @@
+@import url('https://fonts.cdnfonts.com/css/fira-code-2');
+@import url('https://fonts.cdnfonts.com/css/bruno-ace');
+
+
+$fontStack: 'Fira Code', sans-serif;
+$accentFont: 'Bruno Ace', sans-serif;
+$primaryBg: #000;
+$contentSize: 1400px;
+$flex: 1400px;
+$primaryBgPattern: url(@images/common/bgPattern.svg) repeat top;
+$primaryColor: #fff;
+$secondaryColor :#727796;
+$accentColor:#FF006A;
+$accentSecondaryColor:rgba(253, 28, 116, 0.55);
+$codeColor:#00FF38;
+$primaryFontSize:16px;
+$secondaryFontSize:20px;
+$logoFontSize:30px;
+@mixin marginCenter {
+    margin-right: auto;
+    margin-left: auto;
+}
+@mixin rotate {
+    animation: rotation 30s infinite linear;
+
+}
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flexAlignCenter {
+    display: flex;
+    align-items: center;
+}
+@mixin flexJustifyCenter {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1400px) {
+    $contentSize: #f00;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }

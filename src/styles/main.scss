@@ -1,0 +1,24 @@
+@import 'variables';
+
+.mainVisual{
+  background:url(@images/main/mainVisualBg.svg) no-repeat top;
+  height: 1080px;
+  .inner{
+
+  }
+  .mainText{
+    h2{}
+  }
+  .iconText{
+    img{
+      @include rotate;
+      width: 88px;
+
+      
+    }
+    p{}
+  }
+  .iconText{
+    p{}
+  }
+}
