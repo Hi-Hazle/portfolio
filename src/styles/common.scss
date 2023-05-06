@@ -2,15 +2,27 @@
 
 body {
   font: 100% $fontStack;
+  font-weight: 400;
+  letter-spacing: -1px;
   color: $primaryColor;
-  background: $primaryBgPattern;
+  // background: $primaryBgPattern;
   background-color: $primaryBg;
+
 }
 
 .inner {
   @include marginCenter;
   display: block;
   width: $contentSize;
+  max-width: 100%;
+}
+
+.mt50 {
+  margin-top: 50px;
+}
+
+.mt300 {
+  margin-top: 300px;
 }
 
 .btnList {
@@ -20,11 +32,11 @@ body {
 
 .button {
   @include flexCenter;
-  width: 255px;
-  height: 50px;
+  width: 200px;
+  height: 40px;
   border: solid 2px #ff006a;
   color: #fff;
-  font-size: $secondaryFontSize;
+  font-size: 20px;
 
   &.contained {
     background-color: #ff006a;
@@ -33,4 +45,19 @@ body {
   &.outlined {
     color: #ff006a;
   }
+}
+
+#mouseCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: .1s;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #ff006a;
+  opacity: 0.5;
+  pointer-events: none;
+  /* 마우스 이벤트를 무시함 */
+  mix-blend-mode: plus-lighter;
 }

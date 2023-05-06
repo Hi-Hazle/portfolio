@@ -5,6 +5,11 @@
 
 nav {
     @include flexCenter;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
     height: 60px;
     width: 100%;
     background-color: $primaryBg;

@@ -1,10 +1,12 @@
 <script>
 import PageHeader from "components/common/PageHeader.vue"
 import PageFooter from "components/common/PageFooter.vue"
+import MouseCursor from "components/common/MouseCursor.vue"
 export default {
    components: {
       PageHeader,
-      PageFooter
+      PageFooter,
+      MouseCursor
    }
 }
 </script>
@@ -16,4 +18,5 @@ export default {
    <PageHeader />
    <RouterView />
    <PageFooter />
+   <MouseCursor />
 </template>

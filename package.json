@@ -18,10 +18,10 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "pinia": "^2.0.32",
-    "three": "^0.152.2",
+    "three": "^0.134.0",
+    "three-addons": "^1.2.0",
     "vue": "^3.2.36",
-    "vue-router": "^4.1.6",
-    "vue-spline": "^0.0.4"
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",

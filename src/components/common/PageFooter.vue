@@ -4,10 +4,13 @@
 
 <template>
    <footer id="commonFooter">
-      <h1 class="logo">MINE<span>KOR</span></h1>
+      <h1 class="logo">
+         <p>MINE</p>
+         <span>KOR</span>
+      </h1>
       <ul>
          <li><RouterLink to="/">Home</RouterLink></li>
-         <!-- <li><RouterLink to="/collection">Collection</RouterLink></li> -->
+         <li><RouterLink to="/collection">Collection</RouterLink></li>
       </ul>
       <address>Copyright 2023 ~ ME MADE MINE, INC. All Rights Reserved.</address>
    </footer>

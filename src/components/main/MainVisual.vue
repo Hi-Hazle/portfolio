@@ -1,14 +1,11 @@
 <template>
    <section class="mainVisual">
       <div class="inner">
-         <Spline :scene="y3g4U8yoalvVkj7S" />
-
-         <div ref="container"></div>
+         <HologramScene />
          <article class="mainText">
             <h2>Coffee, Code</h2>
-            <h2>Coffee, Code</h2>
+            <h2>And Creativity</h2>
          </article>
-         <!-- <Spline :options="options" /> -->
          <article class="iconText">
             <img src="@images/main/rotateIcon.png" alt="" />
             <p>
@@ -38,43 +35,10 @@
    </section>
 </template>
 <script>
-import { defineComponent } from "vue"
-import Spline from "vue-spline"
-
-export default defineComponent({
-   components: {
-      Spline
-   }
-})
-</script>
-
-<!-- <script>
-import * as THREE from "three"
-
+import HologramScene from "components/main/HologramScene.vue"
 export default {
-   name: "MyThreejs",
-   mounted() {
-      // Three.js 코드 작성
-      const scene = new THREE.Scene()
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-      const renderer = new THREE.WebGLRenderer()
-      renderer.setSize(window.innerWidth, window.innerHeight)
-      this.$refs.container.appendChild(renderer.domElement)
-
-      const geometry = new THREE.BoxGeometry()
-      const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
-      const cube = new THREE.Mesh(geometry, material)
-      scene.add(cube)
-
-      camera.position.z = 5
-
-      function animate() {
-         requestAnimationFrame(animate)
-         cube.rotation.x += 0.01
-         cube.rotation.y += 0.01
-         renderer.render(scene, camera)
-      }
-      animate()
+   components: {
+      HologramScene
    }
 }
-</script> -->
+</script>

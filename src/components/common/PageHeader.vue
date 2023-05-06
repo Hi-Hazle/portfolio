@@ -8,7 +8,7 @@
          <h1 class="logo">MINE</h1>
          <ul>
             <li><RouterLink to="/">Home</RouterLink></li>
-            <!-- <li><RouterLink to="/collection">Collection</RouterLink></li> -->
+            <li><RouterLink to="/collection">Collection</RouterLink></li>
          </ul>
       </div>
    </nav>

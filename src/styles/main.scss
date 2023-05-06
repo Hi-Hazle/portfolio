@@ -1,24 +1,106 @@
 @import 'variables';
 
-.mainVisual{
-  background:url(@images/main/mainVisualBg.svg) no-repeat top;
-  height: 1080px;
-  .inner{
+.mainVisual {
+  background: url(@images/main/mainVisualBg.jpg) no-repeat top;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
 
-  }
-  .mainText{
-    h2{}
-  }
-  .iconText{
-    img{
-      @include rotate;
-      width: 88px;
-
-      
+  .canvasWrap {
+    // background:url(@images/main/canvasBg.png) no-repeat center;
+    // background-size: 50%;
+    position: relative;
+    width: 100%;
+    height: 100%;
+cursor: pointer;
+    canvas {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%)
+      // width: 100% !important;
+      // height: auto !important
     }
-    p{}
   }
-  .iconText{
-    p{}
+
+  .mainText {
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1600px;
+    max-width: 83%;
+    font-family: $accentFont;
+    mix-blend-mode: difference;
+    h2 {
+      font-size: 110px;
+      background: linear-gradient(180deg, rgb(129, 228, 255) 0%, rgba(255, 255, 255, 0.56) 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -5px;
+    }
+
+    h2:last-child {
+      margin-left: auto;
+      text-align: right
+    }
+  }
+
+  .sideSmText {
+    font-size: 28px;
+    font-weight: normal;
+    color: #727796;
+    position: absolute;
+    bottom: 15vh
+  }
+
+  .iconText {
+    position: absolute;
+    top: 135px;
+    padding-top: 15px;
+    right: 8.5%;
+
+    img {
+      @include rotate;
+      width: 50px;
+      position: absolute;
+      right: 20px;
+      top: 0;
+    }
+
+    p {
+      font-size: 30px;
+      font-weight: normal;
+      color: #727796;
+    }
+  }
+
+  .sideLgText {
+    position: absolute;
+    top: 42vh;
+    right: 8.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #E4ABC2;
+
+    li {
+      text-align: right;
+      font-family: $accentFont;
+
+      p {
+        font-size: 60px;
+      }
+
+      span {
+        font-size: 22px;
+      }
+    }
+  }
+  .btnList{
+    position: absolute;
+    bottom: 20vh;
+    right: 8.5%;
   }
 }
