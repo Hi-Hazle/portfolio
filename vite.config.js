@@ -12,7 +12,8 @@ export default defineConfig({
          components: fileURLToPath(new URL("./src/components", import.meta.url)),
          views: fileURLToPath(new URL("./src/views", import.meta.url)),
          styles: fileURLToPath(new URL("./src/styles", import.meta.url)),
-         "@images": fileURLToPath(new URL("./src/assets/images", import.meta.url))
+         "@images": fileURLToPath(new URL("./src/assets/images", import.meta.url)),
+         "@fonts": fileURLToPath(new URL("./src/assets/fonts", import.meta.url))
       }
    },
    css: {
