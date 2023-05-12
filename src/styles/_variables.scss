@@ -1,9 +1,50 @@
-@import url('https://fonts.cdnfonts.com/css/fira-code-2');
-@import url('https://fonts.cdnfonts.com/css/bruno-ace');
+// @import url('https://fonts.cdnfonts.com/css/fira-code-2');
+// @import url('https://fonts.cdnfonts.com/css/bruno-ace');
+@font-face {
+    font-family: 'Fira Code';
+    src: url('@fonts/FiraCode-Light.woff2') format('woff2'),
+        url('@fonts/FiraCode-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('@fonts/FiraCode-Regular.woff2') format('woff2'),
+        url('@fonts/FiraCode-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('@fonts/FiraCode-Medium.woff2') format('woff2'),
+        url('@fonts/FiraCode-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('@fonts/FiraCode-Bold.woff2') format('woff2'),
+        url('@fonts/FiraCode-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bruno Ace';
+    src: url('@fonts/BrunoAce-Regular.woff2') format('woff2'),
+        url('@fonts/BrunoAce-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
-$fontStack: 'Fira Code', sans-serif;
-$accentFont: 'Bruno Ace', sans-serif;
+$fontStack: 'Fira Code',
+sans-serif;
+$accentFont: 'Bruno Ace',
+sans-serif;
 $primaryBg: #000;
 $contentSize: 1400px;
 $flex: 1400px;
@@ -16,10 +57,12 @@ $codeColor:#00FF38;
 $primaryFontSize:16px;
 $secondaryFontSize:20px;
 $logoFontSize:30px;
+
 @mixin marginCenter {
     margin-right: auto;
     margin-left: auto;
 }
+
 @mixin rotate {
     animation: rotation 30s infinite linear;
 
@@ -30,10 +73,12 @@ $logoFontSize:30px;
     align-items: center;
     justify-content: center;
 }
+
 @mixin flexAlignCenter {
     display: flex;
     align-items: center;
 }
+
 @mixin flexJustifyCenter {
     display: flex;
     justify-content: center;
@@ -45,9 +90,10 @@ $logoFontSize:30px;
 
 @keyframes rotation {
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     to {
-      transform: rotate(359deg);
+        transform: rotate(359deg);
     }
-  }
+}
