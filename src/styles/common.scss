@@ -10,6 +10,40 @@ body {
 
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+
+  .element {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 24px;
+  }
+}
+
+
+.loadingWrap {
+  position: fixed;
+  @include flexCenter;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: #000;
+  font-size: 50px;
+}
+
 .inner {
   @include marginCenter;
   display: block;
@@ -47,17 +81,21 @@ body {
   }
 }
 
+canvas {
+  background-color: transparent;
+}
+
 #mouseCursor {
   position: fixed;
-  top: 0;
-  left: 0;
-  transition: .1s;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  background-color: #ff006a;
-  opacity: 0.5;
-  pointer-events: none;
+  top: -50px;
+  left: -50px;
+  // transition: .1s;
+  // width: 50px;
+  // height: 50px;
+  // border-radius: 100%;
+  // // background-color: #ff006a;
+  // // opacity: 0.5;
+  // pointer-events: none;
   /* 마우스 이벤트를 무시함 */
-  mix-blend-mode: plus-lighter;
+  // mix-blend-mode: plus-lighter;
 }
