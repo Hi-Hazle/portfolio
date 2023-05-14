@@ -5,7 +5,20 @@
   background-size: cover;
   height: 100vh;
   position: relative;
-pointer-events: none;
+  pointer-events: none;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 26vh;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(4 5 6) 84%);
+  }
+
   .canvasWrap {
     // background:url(@images/main/canvasBg.png) no-repeat center;
     // background-size: 50%;
@@ -13,7 +26,8 @@ pointer-events: none;
     width: 100%;
     height: 100vh;
     cursor: pointer;
-pointer-events: auto;
+    pointer-events: auto;
+
     canvas {
       position: absolute;
       left: 50%;
@@ -35,7 +49,7 @@ pointer-events: auto;
 
     h2 {
       font-size: 110px;
-      background: linear-gradient(180deg, rgb(129, 228, 255) 0%, rgba(255, 255, 255, 0.56) 80%);
+      background: linear-gradient(180deg, rgb(129, 228, 255) 0%, rgba(255, 255, 255, 0.8) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -85,6 +99,7 @@ pointer-events: auto;
     flex-direction: column;
     gap: 20px;
     color: #E4ABC2;
+
     li {
       text-align: right;
       font-family: $accentFont;
@@ -103,20 +118,17 @@ pointer-events: auto;
     position: absolute;
     bottom: 20vh;
     right: 8.5%;
-    pointer-events:auto
-    ;
+    pointer-events: auto;
   }
 }
 
 .projectIntro {
-  margin-top: 50px;
-
   .inner {
     display: flex;
   }
 
   .sideTitle {
-    padding:  0 24px;
+    padding: 0 10px;
 
     img {
       display: block;
@@ -257,13 +269,14 @@ pointer-events: auto;
       background: #290027;
       padding: 0 25px;
 
-      h3 {font-weight: normal;
-      font-size: 14px;}
+      h3 {
+        font-weight: normal;
+        font-size: 14px;
+      }
 
       .ico {
         display: flex;
         gap: 4px;
-        img {}
       }
 
 
@@ -274,10 +287,234 @@ pointer-events: auto;
       display: block;
       opacity: 70%;
       transition: .3s;
-      &:hover{
+
+      &:hover {
         opacity: 1;
       }
     }
 
+  }
+}
+
+.skills {
+  padding: 150px 0;
+  margin: 150px 0;
+  position: relative;
+  background: url(@images/main/skillsBg.svg) no-repeat center;
+  background-size: cover;
+
+  h2 {
+    font-family: $accentFont;
+    font-size: 80px;
+    text-align: center;
+    color: $accentColor;
+    margin-bottom: 70px;
+  }
+
+  .glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      opacity: 0.4;
+    }
+  }
+
+  .grid {
+    position: relative;
+
+
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 6px;
+    }
+
+
+    li {
+      opacity: 0.5;
+      transition: .3s;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.commonTittle {
+  font-family: $accentFont;
+  font-size: 50px;
+  line-height: 60px;
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+.discover {
+  .grid {
+    display: grid;
+    column-gap: 23px;
+    grid-template-columns: repeat(4, 1fr);
+
+    li {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid rgba(253, 28, 116, 0.5);
+        border-radius: 15px;
+        background-color: #030104;
+        width: 100%;
+        height: 100%;
+
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        background: rgba(253, 28, 116, 0.5);
+        border-radius: 15px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      .three {
+        position: relative;
+        height: 340px;
+
+        canvas {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+
+      .desc {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border: 1px solid rgba(253, 28, 116, 0.5);
+        border-radius: 15px;
+        line-height: 1.7;
+
+        dt {
+          h3 {
+            font-weight: 700;
+            font-size: 18px;
+            color: #53D1ED;
+          }
+
+          p {
+            font-size: 16px;
+            color: #fff;
+          }
+        }
+
+        dd {
+          p {}
+        }
+      }
+
+    }
+  }
+
+  .more {
+    font-family: $accentFont;
+    color: #019F25;
+    text-align: right;
+    margin-top: 30px;
+    font-size: 30px;
+    transition: .3s;
+
+    &:hover {
+      color: #00FF38;
+    }
+  }
+}
+
+
+.collection {
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      &:nth-child(2) {
+
+        a {
+          font-family: $accentFont;
+          color: #fff;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          gap: 13px;
+
+          img {
+            width: 64px;
+          }
+        }
+
+        &:hover {
+          img {
+            animation: rotation 2s infinite linear;
+          }
+        }
+
+      }
+
+      h2 {}
+
+      a {
+
+        img {}
+      }
+
+    }
+  }
+
+  .grid {
+    &:hover {
+      z-index: 1;
+    }
+.vue3-marquee{margin-top: 30px;}
+    .marqueeItem {
+      border: 1px solid #FD1C74;
+      margin-right: 30px;
+      width: 600px;
+      margin-right: 30px;
+      opacity: 0.3;
+
+
+      &:hover {
+        opacity: 1;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+      }
+
+    }
   }
 }

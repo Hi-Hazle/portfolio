@@ -1,17 +1,52 @@
-<!-- <template>
+<template>
   <div id="mouseCursor">
-    <ArrowIcon />
+    <div class="drag" v-if="mode === 'drag'">
+      <i class="xi-arrows"></i>
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <defs>
+          <path
+            id="circle"
+            d="
+        M 50, 50
+        m -37, 0
+        a 37,37 0 1,1 74,0
+        a 37,37 0 1,1 -74,0"
+          />
+        </defs>
+        <text font-size="17">
+          <textPath xlink:href="#circle">돌려보세요 You Can Drag It</textPath>
+        </text>
+      </svg>
+    </div>
+    <div class="link" v-else-if="mode === 'link'"><i class="xi-touch"></i></div>
+    <div class="common" v-else><i class="xi-location-arrow"></i></div>
   </div>
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 const linkBoxs = ref();
+const dragRef = ref();
+
+const mode = ref("default");
+
 onMounted(() => {
   linkBoxs.value = document.querySelectorAll(".linkBox");
-  mouseEventHandler();
-  mouseLinkActiveHandler();
-});
+  dragRef.value = document.querySelector(".dragRef");
 
+  document.body.style.cursor = "none";
+
+  mouseEventHandler();
+  mouseDragActiveHandler();
+  mouseLinkActiveHandler();
+  mouseNormalActiveHandler();
+});
+onUnmounted(() => {
+  document.body.removeEventListener("mousemove", mouseEventHandler);
+  dragRef.value.removeEventListener("mouseover", mouseDragActiveHandler);
+  linkBoxs.value.forEach((el) => {
+    el.removeEventListener("mouseover", mouseLinkActiveHandler);
+  });
+});
 const mouseEventHandler = () => {
   const icon = document.querySelector("#mouseCursor");
   document.body.addEventListener("mousemove", (e) => {
@@ -20,97 +55,30 @@ const mouseEventHandler = () => {
     icon.style.transform = `translate(${x}px, ${y}px)`;
   });
 };
+const mouseDragActiveHandler = () => {
+  dragRef.value.addEventListener("mouseover", function () {
+    if (mode.value !== "drag") mode.value = "drag";
+    event.stopPropagation();
+  });
+};
 const mouseLinkActiveHandler = () => {
   linkBoxs.value.forEach((el) => {
     el.addEventListener("mouseover", () => {
-      console.log("Mouse is over the target div!");
+      if (mode.value !== "link") mode.value = "link";
+      event.stopPropagation();
     });
+  });
+};
+const mouseNormalActiveHandler = () => {
+  dragRef.value.addEventListener("mouseout", function () {
+    if (mode.value !== "default") mode.value = "default";
+    event.stopPropagation();
   });
   linkBoxs.value.forEach((el) => {
-    el.addEventListener("mouseleave", () => {
-      console.log("Mouse is ovesssssssr the target div!");
+    el.addEventListener("mouseout", () => {
+      if (mode.value !== "default") mode.value = "default";
+      event.stopPropagation();
     });
   });
 };
-</script>
-<script>
-import ArrowIcon from "./ArrowIcon.vue";
-export default {
-  components: {
-    // ArrowIcon
-  },
-};
-</script> -->
-
-<template>
-  <div id="glitter-container">
-    <div class="glitter"></div>
-    <div class="glitter"></div>
-    <div class="glitter"></div>
-    <div class="glitter"></div>
-  </div>
-</template>
-<style>
-#glitter-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.glitter {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #fff;
-  opacity: 0;
-  transition: opacity 0.3s ease-out;
-}
-</style>
-
-<script setup>
-import { ref, onMounted } from "vue";
-
-onMounted(() => {
-  // 요소 선택
-  const glitterContainer = document.getElementById("glitter-container");
-  const glitters = document.querySelectorAll(".glitter");
-
-  // 마우스 이벤트 처리
-  glitterContainer.addEventListener("mousemove", (event) => {
-    // 마우스 위치 가져오기
-    const x = event.clientX;
-    const y = event.clientY;
-
-    // 각 반짝이는 효과 위치 업데이트
-    glitters.forEach((glitter) => {
-      // 반짝이는 효과 위치 계산
-      const glitterX = x + (Math.random() - 0.5) * 100;
-      const glitterY = y + (Math.random() - 0.5) * 100;
-
-      // 반짝이는 효과 위치 업데이트
-      glitter.style.transform = `translate(${glitterX}px, ${glitterY}px)`;
-      glitter.style.opacity = 1;
-    });
-  });
-
-  const mouseEventHandler = () => {
-    // const icon = document.querySelector("#mouseCursor");
-    document.body.addEventListener("mousemove", (e) => {
-      const x = e.clientX;
-      const y = e.clientY;
-      glitterContainer.style.transform = `translate(${x}px, ${y}px)`;
-    });
-  };
-  mouseEventHandler();
-
-  // // 반짝이는 효과 숨기기
-  // glitterContainer.addEventListener("mouseleave", () => {
-  //   glitters.forEach((glitter) => {
-  //     glitter.style.opacity = 0;
-  //   });
-  // });
-});
 </script>

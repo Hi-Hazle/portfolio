@@ -13,10 +13,7 @@
           Portfolio
         </p>
       </article>
-      <p class="sideSmText">
-        Now, It’s time to<br />
-        get a ticket!
-      </p>
+      <p class="sideSmText">It's time to<br />dive into my world</p>
       <ul class="sideLgText">
         <li>
           <p>35,4K</p>
@@ -28,8 +25,8 @@
         </li>
       </ul>
       <ul class="btnList">
-        <li class="button contained">Recent Works</li>
-        <li class="button outlined">Collections</li>
+        <li class="button contained linkBox">Recent Works</li>
+        <li class="button outlined linkBox">Collections</li>
       </ul>
     </div>
   </section>

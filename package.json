@@ -22,7 +22,8 @@
     "three": "^0.134.0",
     "three-addons": "^1.2.0",
     "vue": "^3.2.36",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vue3-marquee": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",

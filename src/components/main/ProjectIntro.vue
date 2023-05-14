@@ -54,12 +54,11 @@
             <i>Compiled successfully in 503 ms</i>
           </div>
         </li>
-        <li class="borderBox content">
+        <li class="borderBox content linkBox">
           <a
             href="https://team-play.kr/"
             target="_blank"
             rel="noopener noreferrer"
-            class="linkBox"
           >
             <div class="header">
               <h3>https://teamp-play.kr</h3>
@@ -77,17 +76,14 @@
     </div>
   </section>
 
-  <section class="projectIntro mt50">
+  <section class="projectIntro mt100">
     <div class="inner">
       <ul class="grid ty2">
-        <li class="borderBox content">
-          <div ref="el"></div>
-
+        <li class="borderBox content linkBox">
           <a
             href="https://tangramfactory.com/smartropepure"
             target="_blank"
             rel="noopener noreferrer"
-            class="linkBox"
           >
             <div class="header">
               <h3>https://tangram.kr/smartropepure</h3>
@@ -153,11 +149,3 @@
     </div>
   </section>
 </template>
-
-<script setup>
-import { onMounted } from "vue";
-
-onMounted(() => {
-  // console.log("PROJECT");
-});
-</script>

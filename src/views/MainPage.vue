@@ -1,7 +1,6 @@
 <template>
   <app-header />
   <MainVisual />
-  <ArrowIcon />
   <ProjectIntro />
   <SkillList />
   <Discover />
@@ -25,7 +24,6 @@ import Collections from "components/main/Collections.vue";
 import BannerText from "components/main/BannerText.vue";
 import SubmitForm from "components/main/SubmitForm.vue";
 import MouseCursor from "components/common/MouseCursor.vue";
-import ArrowIcon from "components/common/ArrowIcon.vue";
 
 const emit = defineEmits(["update", "set"]);
 
