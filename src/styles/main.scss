@@ -1,11 +1,11 @@
 @import 'variables';
 
 .mainVisual {
-  background: url(@images/main/mainVisualBg.jpg) no-repeat top;
+  // background: url(@images/main/mainVisualBg.jpg) no-repeat top;
   background-size: cover;
   height: 100vh;
   position: relative;
-
+pointer-events: none;
   .canvasWrap {
     // background:url(@images/main/canvasBg.png) no-repeat center;
     // background-size: 50%;
@@ -13,7 +13,7 @@
     width: 100%;
     height: 100vh;
     cursor: pointer;
-
+pointer-events: auto;
     canvas {
       position: absolute;
       left: 50%;
@@ -53,7 +53,7 @@
     font-weight: normal;
     color: #727796;
     position: absolute;
-    bottom: 15vh
+    bottom: 15vh;
   }
 
   .iconText {
@@ -85,7 +85,6 @@
     flex-direction: column;
     gap: 20px;
     color: #E4ABC2;
-
     li {
       text-align: right;
       font-family: $accentFont;
@@ -104,6 +103,8 @@
     position: absolute;
     bottom: 20vh;
     right: 8.5%;
+    pointer-events:auto
+    ;
   }
 }
 

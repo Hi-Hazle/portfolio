@@ -5,7 +5,7 @@ body {
   font-weight: 400;
   letter-spacing: -1px;
   color: $primaryColor;
-  // background: $primaryBgPattern;
+  background: $primaryBgPattern;
   background-color: $primaryBg;
 
 }
@@ -68,16 +68,17 @@ body {
   @include flexCenter;
   width: 200px;
   height: 40px;
-  border: solid 2px #ff006a;
+  border: solid 2px $accentColor;
   color: #fff;
   font-size: 20px;
 
   &.contained {
-    background-color: #ff006a;
+    background-color: $accentColor;
   }
 
   &.outlined {
-    color: #ff006a;
+    color: #fff;
+    background: #ff006a30;
   }
 }
 
@@ -93,7 +94,7 @@ canvas {
   // width: 50px;
   // height: 50px;
   // border-radius: 100%;
-  // // background-color: #ff006a;
+  // // background-color: $accentColor;
   // // opacity: 0.5;
   // pointer-events: none;
   /* 마우스 이벤트를 무시함 */
