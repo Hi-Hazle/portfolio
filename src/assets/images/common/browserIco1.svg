@@ -1,8 +1,7 @@
-<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="path-1-inside-1_145_253" fill="white">
-<path d="M0 0H14V14H0V0Z"/>
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_99_407" fill="white">
+<path d="M0 0H18.0001V18.0001H0V0Z"/>
 </mask>
-<path d="M0 0H14V14H0V0Z" fill="black"/>
-<path d="M0 0V-1H-1V0H0ZM14 0H15V-1H14V0ZM14 14V16H15V14H14ZM0 14H-1V16H0V14ZM0 1H14V-1H0V1ZM13 0V14H15V0H13ZM14 12H0V16H14V12ZM1 14V0H-1V14H1Z" fill="#FD1C74" mask="url(#path-1-inside-1_145_253)"/>
-<line x1="2.33301" y1="9.88867" x2="11.6663" y2="9.88867" stroke="#FD1C74" stroke-width="2"/>
+<path d="M0 0V-1H-1V0H0ZM18.0001 0H19.0001V-1H18.0001V0ZM18.0001 18.0001V20.0001H19.0001V18.0001H18.0001ZM0 18.0001H-1V20.0001H0V18.0001ZM0 1H18.0001V-1H0V1ZM17.0001 0V18.0001H19.0001V0H17.0001ZM18.0001 16.0001H0V20.0001H18.0001V16.0001ZM1 18.0001V0H-1V18.0001H1Z" fill="#866FFF" fill-opacity="0.5" mask="url(#path-1-inside-1_99_407)"/>
+<line x1="3" y1="13" x2="15.0001" y2="13" stroke="#866FFF" stroke-opacity="0.5" stroke-width="2"/>
 </svg>

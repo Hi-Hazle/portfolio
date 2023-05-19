@@ -5,9 +5,12 @@ body {
   font-weight: 400;
   letter-spacing: -1px;
   color: $primaryColor;
-  background: $primaryBgPattern;
+  // background: $primaryBgPattern;
   background-color: $primaryBg;
 
+}
+#scroller{
+height: 100vh;
 }
 a{cursor: none;}
 

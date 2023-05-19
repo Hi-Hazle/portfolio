@@ -1,13 +1,36 @@
-html {
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-}
+// html {
+//     line-height: 1.15;
+//     -webkit-text-size-adjust: 100%;
+// }
 
 body {
     margin: 0;
+    letter-spacing: normal;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    word-break: break-word;
+    word-wrap: break-word;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+html,
+body {
+    width: 100vw;
+    height:auto;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    min-width: 320px;
+    -webkit-overflow-scrolling: auto;
+}
+.scroll-content{
     overflow-x: hidden;
 }
-
 a {
     display: block;
     text-decoration: none;
@@ -66,7 +89,9 @@ ul {
     padding: 0;
     list-style: none
 }
-p,a,
+
+p,
+a,
 h1,
 h2,
 h3,

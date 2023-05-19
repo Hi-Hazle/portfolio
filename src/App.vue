@@ -1,5 +1,6 @@
 <template>
-  <LoaderWrap> </LoaderWrap>
+  <ScrollerWrap />
+  <!-- <router-view /> -->
 </template>
 
 <style lang="scss">
@@ -8,5 +9,6 @@
 </style>
 
 <script setup>
-import LoaderWrap from "components/common/LoaderWrap.vue";
+import ScrollerWrap from "components/common/ScrollerWrap.vue";
+// import LoaderWrap from "components/common/LoaderWrap.vue";
 </script>

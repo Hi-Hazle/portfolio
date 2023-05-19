@@ -15,10 +15,3 @@
     <address>Copyright 2023 ~ ME MADE MINE, INC. All Rights Reserved.</address>
   </footer>
 </template>
-<script setup>
-import { onMounted } from "vue";
-
-onMounted(() => {
-  // console.log("FOOTER");
-});
-</script>

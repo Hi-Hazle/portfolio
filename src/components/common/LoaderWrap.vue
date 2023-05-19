@@ -1,6 +1,5 @@
 <template>
   <router-view v-on:update="updateMountedPercentage" v-on:set="setAsyncCount" />
-
   <transition name="fade">
     <div class="element loadingWrap" v-if="!state.loaded">
       {{ state.completedPercentage }}%
@@ -8,9 +7,8 @@
   </transition>
 </template>
 
-<style></style>
 <script setup>
-import { reactive, computed, watch, provide } from "vue";
+import { reactive, computed, inject, provide, onMounted, ref } from "vue";
 
 const state = reactive({
   asyncCount: 0,
@@ -42,13 +40,13 @@ const updateCount = (value, range, speed) => {
 const updateAsyncPercentage = () => {
   updateCount(state.percentage, 1, 5);
 };
-
 const updateMountedPercentage = () => {
-  updateCount(90, 10, 50);
+  state.asyncCount === 0 ? updateCount(100, 10, 50) : updateCount(90, 10, 50);
 };
 
 const setAsyncCount = (value) => {
   state.asyncCount = value;
 };
+
 provide("updateAsyncPercentage", updateAsyncPercentage);
 </script>

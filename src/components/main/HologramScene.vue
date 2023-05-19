@@ -14,7 +14,7 @@ import { CopyShader } from "three/examples/jsm/shaders/CopyShader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three-addons";
 
-import { onMounted, ref, onUnmounted, inject } from "vue";
+import { onMounted, ref, onUnmounted, onBeforeUnmount, inject } from "vue";
 
 const canvas = ref(null);
 let scene, renderer, composer;
@@ -169,7 +169,7 @@ const genCubeUrls = function (prefix, postfix) {
 };
 
 function loadCubeTexture() {
-  let ldrUrls = genCubeUrls("/src/assets/images/3d-background/bg5/", ".png");
+  let ldrUrls = genCubeUrls("assets/images/3d-background/bg5/", ".png");
   return new Promise((resolve, reject) => {
     new THREE.CubeTextureLoader().load(
       ldrUrls,
@@ -181,6 +181,7 @@ function loadCubeTexture() {
       },
       undefined,
       (error) => {
+        console.log(error);
         reject(error);
       }
     );
@@ -198,20 +199,23 @@ function loadModel() {
   });
 
   const loader = new GLTFLoader();
-  return new Promise(
-    (resolve, reject) => {
-      loader.load("/src/assets/images/main/test.gltf", (gltf) => {
+
+  return new Promise((resolve, reject) => {
+    loader.load(
+      "assets/images/main/test.gltf",
+      (gltf) => {
         model = gltf;
         gltf.scene.scale.set(7, 7, 7);
         balls = gltf.scene.children[0].children[0].children;
         resolve(true);
-      });
-    },
-    undefined,
-    (error) => {
-      reject(error);
-    }
-  );
+      },
+      undefined,
+      (error) => {
+        console.log(error);
+        reject(error);
+      }
+    );
+  });
 }
 
 function addModelTexture() {
@@ -292,7 +296,7 @@ onMounted(async () => {
   window.addEventListener("resize", onWindowResize);
 });
 
-onUnmounted(() => {
+onBeforeUnmount(() => {
   // 리소스 해제
   scene.children.forEach((child) => {
     scene.remove(child);
