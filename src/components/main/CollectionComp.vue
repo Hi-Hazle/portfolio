@@ -25,7 +25,7 @@
           class="marqueeItem"
         >
           <img
-            :src="`assets/images/main/mainCollection${index + 1}.jpg`"
+            :src="`assets/images/main/main-collection${index + 1}.jpg`"
             :alt="item.alt"
           />
         </a>
@@ -45,7 +45,7 @@
           class="marqueeItem"
         >
           <img
-            :src="`assets/images/main/mainCollection${index + 7}.jpg`"
+            :src="`assets/images/main/main-collection${index + 7}.jpg`"
             :alt="item.alt"
           />
         </a>

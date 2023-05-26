@@ -14,7 +14,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 0;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(4 5 6) 84%)
   }
 
@@ -35,12 +35,12 @@
 
   .mainText {
     position: absolute;
-    top: 10vh;
+    top: 19vh;
     left: 50%;
     transform: translateX(-50%);
     width: 1600px;
     max-width: 83%;
-    font-family: $accentFont;
+    font-family: $accent-font;
     mix-blend-mode: difference;
 
     h2 {
@@ -61,14 +61,14 @@
   .sideSmText {
     font-size: 28px;
     font-weight: normal;
-    color: #727796;
+    color: #0bff3a94;
     position: absolute;
     bottom: 15vh
   }
 
   .iconText {
     position: absolute;
-    top: 135px;
+    top: 20vh;
     padding-top: 15px;
     right: 8.5%;
 
@@ -83,22 +83,23 @@
     p {
       font-size: 30px;
       font-weight: normal;
-      color: #727796
+      color: #0bff3a94;
+
     }
   }
 
   .sideLgText {
     position: absolute;
-    top: 42vh;
+    top: 48vh;
     right: 8.5%;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    color: #E4ABC2;
+    color: $accent-secondary-color;
 
     li {
       text-align: right;
-      font-family: $accentFont;
+      font-family: $accent-font;
 
       p {
         font-size: 60px
@@ -114,7 +115,7 @@
     position: absolute;
     bottom: 20vh;
     right: 8.5%;
-    // pointer-events: auto
+   z-index: 1;
   }
 }
 
@@ -122,7 +123,7 @@
 
   .title {
     h3 {
-      font-family: $accentFont;
+      font-family: $accent-font;
       text-transform: uppercase;
       font-size: 80px;
       color: #fff;
@@ -225,29 +226,208 @@
 }
 
 
-.horizontalTexts {
-  li {
-    font-family: $accentFont;
-    font-size: 80px;
+.horizontalText {
+  white-space: nowrap;
+  overflow: hidden;
+  @include flex-center;
+  height: 100vh;
+  position: relative;
+
+  .text {
+    li {
+      font-family: $accent-font;
+      font-size: 200px;
+      font-weight: normal;
+      line-height: 1.5;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      line-height: 1;
+
+      &:nth-child(1) {
+        left: 10%;
+      }
+
+      &:nth-child(2) {
+        right: 30%;
+      }
+
+      &:nth-child(3) {
+        left: 40%;
+      }
+
+      &:nth-child(4) {
+        right: 40%;
+      }
+    }
+  }
+
+  .pop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+
+    .window-body {
+      img {
+        height: 47px;
+
+      }
+    }
+
+    li {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      &:nth-child(1) {
+        top: 33%;
+        left: 48%;
+      }
+
+      &:nth-child(2) {
+        left: 63%;
+        top: 53%;
+      }
+
+      &:nth-child(3) {
+        top: 40%;
+        left: 56%;
+
+      }
+
+      &:nth-child(4) {
+        top: 24%;
+        left: 70%;
+      }
+
+      &:nth-child(5) {
+        top: 60%;
+        left: 45%;
+      }
+
+      &:nth-child(6) {
+        top: 68%;
+        left: 60%
+      }
+
+      &:nth-child(7) {
+        top: 30%;
+        left: 70%
+      }
+
+      &:nth-child(8) {
+        top: 40%;
+        left: 24%;
+      }
+
+      &li:nth-child(9) {
+        top: 56%;
+        left: 33%;
+      }
+
+      &:nth-child(10) {
+        top: 35%;
+        left: 80%;
+      }
+
+      &:nth-child(11) {
+        top: 57%;
+        left: 80%;
+      }
+
+      &:nth-child(12) {
+        top: 50%;
+        left: 47%;
+      }
+
+      &:nth-child(13) {
+        top: 44%;
+        left: 71%;
+      }
+
+      &:nth-child(14) {
+        top: 22%;
+        left: 36%;
+      }
+
+      &:nth-child(15) {
+        top: 55%;
+        left: 31%;
+      }
+
+      &:nth-child(16) {
+        top: 47%;
+        left: 22%;
+      }
+
+      &:nth-child(17) {
+        top: 28%;
+        left: 42%;
+      }
+
+      &:nth-child(18) {
+        top: 52%;
+        left: 82%;
+      }
+    }
+  }
+}
+
+.horizontalImage {
+  overflow: hidden;
+
+  h2 {
+    font-family: $accent-font;
+    font-size: 140px;
     font-weight: normal;
-    line-height: 1.5;
-    color: #fff;
-    text-align: center;
+    color: #aaa;
+    margin-left: 10%;
 
-    &:nth-child(1) {
-      margin-left: 10%;
+  }
+
+  .imgs {
+    display: flex;
+    column-gap: 80px;
+    white-space: nowrap;
+
+    li {
+      img {
+        display: block;
+        width: 600px;
+      }
     }
+  }
 
-    &:nth-child(2) {
-      margin-right: 30%;
-    }
+  .txts {
+    font-family: $accent-font;
 
-    &:nth-child(3) {
-      margin-left: 40%;
-    }
+    li {
+      font-size: 60px;
+      font-weight: normal;
+      color: #aaa;
+      position: relative;
+      left: 10%;
+    
+      
 
-    &:nth-child(4) {
-      margin-right: 10%;
+      &:nth-child(2) {
+        left: 20%;
+      }
+      .txtBox{
+        display: flex;
+        align-items: baseline;
+      }
+      a {
+        font-size: 28px;
+        font-weight: normal;
+        color: #00ff38;
+        margin-left: 40px;
+      }
     }
   }
 }

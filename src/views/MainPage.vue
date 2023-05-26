@@ -1,8 +1,10 @@
 <template>
-  <app-header />
+  <!-- <app-header /> -->
   <Visual />
   <Intro />
   <HorizontalText />
+  <HorizontalImage />
+  <HorizontalGreen />
   <Skill />
   <app-footer />
 </template>
@@ -12,9 +14,12 @@ import { onMounted, defineEmits } from "vue";
 import AppHeader from "components/common/AppHeader.vue";
 import Visual from "components/main/VisualComp.vue";
 import Intro from "components/main/IntroComp.vue";
+import HorizontalText from "components/main/HorizontalTextComp.vue";
+import HorizontalImage from "components/main/HorizontalImageComp.vue";
+import HorizontalGreen from "components/main/HorizontalGreenComp.vue";
+
 import Skill from "components/main/SkillComp.vue";
 import AppFooter from "components/common/AppFooter.vue";
-import HorizontalText from "components/main/HorizontalTextComp.vue";
 
 const emit = defineEmits(["update", "set"]);
 

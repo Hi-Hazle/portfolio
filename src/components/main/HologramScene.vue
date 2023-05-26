@@ -1,5 +1,5 @@
 <template>
-  <div ref="canvas" class="canvasWrap dragRef"></div>
+  <div ref="canvas" class="canvasWrap"></div>
 </template>
 
 <script setup>

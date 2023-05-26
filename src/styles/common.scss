@@ -1,18 +1,17 @@
 @import 'variables';
 
 body {
-  font: 100% $fontStack;
+  font: 100% $font-stack;
   font-weight: 400;
   letter-spacing: -1px;
-  color: $primaryColor;
-  // background: $primaryBgPattern;
-  background-color: $primaryBg;
+  color: $primary-color;
+  // background: $primary-bgPattern;
+  background-color: $primary-bg;
 
 }
 #scroller{
 height: 100vh;
 }
-a{cursor: none;}
 
 .fade-enter-active,
 .fade-leave-active {
@@ -38,7 +37,7 @@ a{cursor: none;}
 
 .loadingWrap {
   position: fixed;
-  @include flexCenter;
+  @include flex-center;
   top: 0;
   left: 0;
   width: 100vw;
@@ -49,9 +48,9 @@ a{cursor: none;}
 }
 
 .inner {
-  @include marginCenter;
+  @include margin-center;
   display: block;
-  width: $contentSize;
+  width: $content-size;
   max-width: 100%;
 }
 .mt100{
@@ -65,6 +64,10 @@ a{cursor: none;}
 .mt300 {
   margin-top: 300px;
 }
+.mtb300 {
+  margin-top: 300px;
+  margin-bottom: 300px;
+}
 .pt300{
   padding-top: 300px;
 }
@@ -77,20 +80,19 @@ a{cursor: none;}
 }
 
 .button {
-  @include flexCenter;
+  @include flex-center;
   width: 200px;
   height: 40px;
-  border: solid 2px $accentColor;
-  color: #fff;
+  border: solid 2px $code-secondary-color;
+  color: #000;
   font-size: 20px;
 
   &.contained {
-    background-color: $accentColor;
+    background-color: $code-secondary-color;
   }
 
   &.outlined {
     color: #fff;
-    background: #ff006a30;
   }
 }
 
@@ -107,9 +109,8 @@ canvas {
   height: 80px;
   z-index: 999;
 
-  pointer-events: none;
   /* 마우스 이벤트를 무시함 */
-  @include flexCenter;
+  @include flex-center;
 
 
 
@@ -123,7 +124,7 @@ canvas {
 
   .common {
     transform: rotate(-70deg);
-    color: $accentColor;
+    color: $accent-color;
 
   }
 

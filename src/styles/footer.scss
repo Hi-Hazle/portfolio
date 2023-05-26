@@ -4,7 +4,7 @@
 
 
 footer {
-    @include flexCenter;
+    @include flex-center;
     flex-direction: column;
     padding: 56px 20px;
     margin-bottom: 18px;
@@ -17,7 +17,7 @@ footer {
 
         p {
             font-size: 40px;
-            font-family: $accentFont;
+            font-family: $accent-font;
             color: #484848;
         }
 

@@ -37,7 +37,6 @@ const store = useScrollerStore();
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
-import Scrollbar from "smooth-scrollbar";
 
 gsap.registerPlugin(ScrollTrigger);
 const scrollHorizontal = ref(null);
@@ -46,12 +45,12 @@ let scroller = ref(null);
 
 onMounted(() => {
   scroller.value = store.scroller;
+  store.isMarkers();
 
   ScrollTrigger.defaults({
     scroller: scroller.value,
   });
-  const contentWidth = scrollHorizontal.value.offsetWidth;
-  // content.value.style.width = `${contentWidth}px`;
+
   const space = Number(
     window
       .getComputedStyle(scrollHorizontal.value)
@@ -104,7 +103,7 @@ onMounted(() => {
     scrub: false,
     animation: textTimeline,
     toggleActions: "restart none none reverse",
-    // markers: true,
+    markers: true,
   });
   const target = content.value;
   const targets = gsap.utils.toArray(content.value.querySelectorAll("div"));
@@ -123,22 +122,20 @@ onMounted(() => {
       scrollTrigger: {
         trigger: scrollHorizontal.value,
         pin: true,
-        onPin: (self) => {
-          self.pinTarget.style.willChange = "transform";
-        },
-        onUnpin: (self) => {
-          self.pinTarget.style.willChange = "auto";
-        },
-        // end: `+=${contentWidth}px`,
+        // onPin: (self) => {
+        //   self.pinTarget.style.willChange = "transform";
+        // },
+        // onUnpin: (self) => {
+        //   self.pinTarget.style.willChange = "auto";
+        // },
         start: "top top",
         end: `+=600%`,
         scrub: true,
-        markers: true,
       },
     })
     .to(imgTarget, {
       width: "100%",
-      ease: "Power1.out",
+      ease: "none",
       duration: 4,
       delay: 1,
     })
@@ -182,6 +179,7 @@ onMounted(() => {
       }
     )
     .pause();
+
   window.addEventListener("resize", ScrollTrigger.update);
 });
 

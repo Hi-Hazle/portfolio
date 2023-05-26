@@ -16,15 +16,21 @@
     "prettier": "prettier --write \"src/**/*.js\" \"src/**/*.vue\""
   },
   "dependencies": {
+    "ammo": "^3.0.3",
+    "cannon": "^0.6.2",
+    "cannon-es": "^0.20.0",
+    "dat.gui": "^0.7.9",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "gsap": "^3.11.5",
     "locomotive-scroll": "^4.1.4",
+    "nice-color-palettes": "^3.0.0",
     "pinia": "^2.0.32",
     "smooth-scrollbar": "^8.8.3",
     "split-type": "^0.3.3",
     "three": "^0.134.0",
     "three-addons": "^1.2.0",
+    "troisjs": "^0.3.4",
     "vue": "^3.2.36",
     "vue-router": "^4.1.6",
     "vue3-marquee": "latest"

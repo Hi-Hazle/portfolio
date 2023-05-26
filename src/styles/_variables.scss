@@ -41,25 +41,25 @@
 }
 
 
-$fontStack: 'Fira Code',
-sans-serif;
-$accentFont: 'Bruno Ace',
-sans-serif;
-$primaryBg: #000;
-$contentSize: 1400px;
+$font-stack: 'Fira Code', sans-serif;
+$accent-font: 'Bruno Ace', sans-serif;
+$primary-bg: #000;
+$content-size: 1400px;
 $flex: 1400px;
-$primaryBgPattern: url(@images/common/bgPattern.svg) repeat top;
-$primaryColor: #fff;
-$secondaryColor :#727796;
-$accentColor:#FF006A;
-$secondaryColor:#806bff;
-$secondaryAlphaColor:rgba(134,111 ,255, 0.5);
-$codeColor:#00FF38;
-$primaryFontSize:16px;
-$secondaryFontSize:20px;
-$logoFontSize:30px;
+$primary-bgPattern: url(@images/common/bgPattern.svg) repeat top;
+$primary-color: #fff;
+$secondary-color :#727796;
+$accent-color:#FF006A;
+$accent-secondary-color:#6ED567;
+$secondary-color:#806bff;
+$secondary-alphaColor:rgba(134,111 ,255, 0.5);
+$code-color:#00FF38;
+$code-secondary-color:#00FF38;
+$primary-font-size:16px;
+$secondary-font-size:20px;
+$logo-font-size:30px;
 
-@mixin marginCenter {
+@mixin margin-center {
     margin-right: auto;
     margin-left: auto;
 }
@@ -69,24 +69,24 @@ $logoFontSize:30px;
 
 }
 
-@mixin flexCenter {
+@mixin flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-@mixin flexAlignCenter {
+@mixin flex-align-center {
     display: flex;
     align-items: center;
 }
 
-@mixin flexJustifyCenter {
+@mixin flex-justify-center {
     display: flex;
     justify-content: center;
 }
 
 @media (max-width: 1400px) {
-    $contentSize: #f00;
+    $content-size: #f00;
 }
 
 @keyframes rotation {
