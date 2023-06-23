@@ -1,5 +1,7 @@
 @import 'variables';
 
+
+
 body {
   font: 100% $font-stack;
   font-weight: 400;
@@ -8,9 +10,11 @@ body {
   // background: $primary-bgPattern;
   background-color: $primary-bg;
 
+
 }
-#scroller{
-height: 100vh;
+
+#scroller {
+  height: 100vh;
 }
 
 .fade-enter-active,
@@ -51,12 +55,14 @@ height: 100vh;
   @include margin-center;
   display: block;
   width: $content-size;
-  max-width: 100%;
+  max-width: 90%;
 }
-.mt100{
+
+.mt100 {
   margin-top: 100px;
 
 }
+
 .mt50 {
   margin-top: 50px;
 }
@@ -64,16 +70,20 @@ height: 100vh;
 .mt300 {
   margin-top: 300px;
 }
+
 .mtb300 {
   margin-top: 300px;
   margin-bottom: 300px;
 }
-.pt300{
+
+.pt300 {
   padding-top: 300px;
 }
-.pb300{
+
+.pb300 {
   padding-bottom: 300px;
 }
+
 .btnList {
   display: flex;
   gap: 15px;

@@ -34,7 +34,8 @@ import { onMounted, onBeforeUnmount, ref, inject, watch } from "vue";
 import { useScrollerStore } from "@/stores/scroller";
 const store = useScrollerStore();
 
-import gsap from "gsap";
+// import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
@@ -103,7 +104,6 @@ onMounted(() => {
     scrub: false,
     animation: textTimeline,
     toggleActions: "restart none none reverse",
-    markers: true,
   });
   const target = content.value;
   const targets = gsap.utils.toArray(content.value.querySelectorAll("div"));
@@ -122,12 +122,6 @@ onMounted(() => {
       scrollTrigger: {
         trigger: scrollHorizontal.value,
         pin: true,
-        // onPin: (self) => {
-        //   self.pinTarget.style.willChange = "transform";
-        // },
-        // onUnpin: (self) => {
-        //   self.pinTarget.style.willChange = "auto";
-        // },
         start: "top top",
         end: `+=600%`,
         scrub: true,

@@ -6,20 +6,18 @@
       <li>Please drag them</li>
       <li>to move away.</li>
     </ul>
-    <ul class="pop">
-      <li v-for="(pop, i) in popups" :key="i">
-        <div class="window">
+    <ul class="txt-pop">
+      <li v-for="(text, i) in popupTexts" :key="i">
+        <div class="window" style="width: 300px">
           <div class="title-bar">
-            <div class="title-bar-text">
-              {{ i % 2 === 0 ? "드래그 해보세요!" : "Drag Me!" }}
-            </div>
+            <div class="title-bar-text">드래그 해보세요!</div>
             <div class="title-bar-controls">
-              <button aria-label="Help"></button>
               <button aria-label="Close" @click="closePop"></button>
             </div>
           </div>
           <div class="window-body">
-            <img :src="`assets/images/logos/${pop}.png`" alt="" />
+            <p>{{ text[1] }}</p>
+            <p>{{ text[0] }}</p>
           </div>
         </div>
       </li>
@@ -33,7 +31,6 @@
 
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from "vue";
-import { useScrollerStore } from "@/stores/scroller";
 
 import gsap from "gsap";
 import { Draggable } from "gsap/all";
@@ -43,7 +40,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
 const horizontalText = ref(null);
-let scroller = ref(null);
 
 const popups = [
   "aether",
@@ -65,7 +61,30 @@ const popups = [
   "dkue",
   "aether",
 ];
-
+const popupTexts = [
+  ["기술적 전문성", "Technical expertise"],
+  ["코드 품질 개선", "Quality assurance"],
+  ["문제 해결 능력", "Problem-solving"],
+  ["적응력", "Adaptability"],
+  ["협업 능력", "Collaboration"],
+  ["세심한 주의력", "Attention to detail"],
+  ["시간 관리", "Time management"],
+  ["원활한 커뮤니케이션", "Communication"],
+  ["지속적인 학습", "Continuous learning"],
+  ["창의성", "Creativity"],
+  ["분석적 사고", "Analytical thinking"],
+  ["기술적 전문성", "Technical expertise"],
+  ["코드 품질 개선", "Quality assurance"],
+  ["문제 해결 능력", "Problem-solving"],
+  ["적응력", "Adaptability"],
+  ["협업 능력", "Collaboration"],
+  ["세심한 주의력", "Attention to detail"],
+  ["시간 관리", "Time management"],
+  ["원활한 커뮤니케이션", "Communication"],
+  ["지속적인 학습", "Continuous learning"],
+  ["창의성", "Creativity"],
+  ["분석적 사고", "Analytical thinking"],
+];
 function closePop(e) {
   e.target.closest("li").style.display = "none";
 }
@@ -75,11 +94,11 @@ onMounted(() => {
     horizontalText.value.querySelectorAll(".text li")
   );
   const pops = gsap.utils.toArray(
-    horizontalText.value.querySelectorAll(".pop li")
+    horizontalText.value.querySelectorAll(".txt-pop li")
   );
 
   //------ 드래그 ------//
-  Draggable.create(".pop li", {
+  Draggable.create(".txt-pop li", {
     bounds: ".horizontalText",
     edgeResistance: 0.9,
     type: "x,y",
@@ -170,7 +189,7 @@ onMounted(() => {
         },
         duration: 4,
       },
-      "-=50%"
+      "-=70%"
     );
 
   window.addEventListener("resize", ScrollTrigger.update);

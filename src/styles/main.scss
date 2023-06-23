@@ -115,7 +115,7 @@
     position: absolute;
     bottom: 20vh;
     right: 8.5%;
-   z-index: 1;
+    z-index: 1;
   }
 }
 
@@ -262,7 +262,9 @@
     }
   }
 
-  .pop {
+
+
+  .txt-pop {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -271,6 +273,128 @@
     width: 100%;
     height: 100%;
 
+    li {
+      position: absolute;
+      left: 40%;
+      bottom: 40%;
+      transform: translate(-50%, -50%);
+
+      .window {
+        width: 400px;
+        height: 100px;
+        font-size: 20px;
+      }
+
+      &:nth-child(2) {
+        left: 41%;
+        bottom: 41%;
+      }
+
+      &:nth-child(3) {
+        left: 42%;
+        bottom: 42%;
+      }
+
+      &:nth-child(4) {
+        left: 43%;
+        bottom: 43%;
+      }
+
+      &:nth-child(5) {
+        left: 44%;
+        bottom: 44%;
+      }
+
+      &:nth-child(6) {
+        left: 45%;
+        bottom: 45%;
+      }
+
+      &:nth-child(7) {
+        left: 46%;
+        bottom: 46%;
+      }
+
+      &:nth-child(8) {
+        left: 47%;
+        bottom: 47%;
+      }
+
+      &:nth-child(9) {
+        left: 48%;
+        bottom: 48%;
+      }
+
+      &:nth-child(10) {
+        left: 49%;
+        bottom: 49%;
+      }
+
+      &:nth-child(11) {
+        left: 50%;
+        bottom: 50%;
+      }
+
+      &:nth-child(12) {
+        left: 51%;
+        bottom: 51%;
+      }
+
+      &:nth-child(13) {
+        left: 52%;
+        bottom: 52%;
+      }
+
+      &:nth-child(14) {
+        left: 53%;
+        bottom: 53%;
+      }
+
+      &:nth-child(15) {
+        left: 54%;
+        bottom: 54%;
+      }
+
+      &:nth-child(16) {
+        left: 55%;
+        bottom: 55%;
+      }
+
+      &:nth-child(17) {
+        left: 56%;
+        bottom: 56%;
+      }
+
+      &:nth-child(18) {
+        left: 57%;
+        bottom: 57%;
+      }
+
+      &:nth-child(19) {
+        left: 58%;
+        bottom: 58%;
+      }
+
+      &:nth-child(20) {
+        left: 59%;
+        bottom: 59%;
+      }
+
+      &:nth-child(21) {
+        left: 60%;
+        bottom: 60%;
+      }
+
+      &:nth-child(22) {
+        left: 61%;
+        bottom: 61%;
+      }
+
+    }
+
+  }
+
+  .pop {
     .window-body {
       img {
         height: 47px;
@@ -378,6 +502,8 @@
   }
 }
 
+
+
 .horizontalImage {
   overflow: hidden;
 
@@ -412,21 +538,253 @@
       color: #aaa;
       position: relative;
       left: 10%;
-    
-      
+
+
 
       &:nth-child(2) {
         left: 20%;
       }
-      .txtBox{
+
+      .txtBox {
         display: flex;
         align-items: baseline;
       }
+
       a {
         font-size: 28px;
         font-weight: normal;
         color: #00ff38;
         margin-left: 40px;
+      }
+    }
+  }
+}
+
+
+.workWrap {
+  h3 {
+    font-family: $accent-font;
+    font-weight: 400;
+    font-size: 160px;
+    position: relative;
+    padding-right: 33px;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      right: 0;
+      top: 0;
+      background: #00FF38;
+      border-radius: 100%;
+    }
+  }
+
+  .inside {
+    width: 1900px;
+    max-width: 90%;
+    @include margin-center
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 50px;
+    row-gap: 200px;
+
+    li {
+      &:nth-child(1) {
+        grid-column: 1/7;
+      }
+
+      &:nth-child(2) {
+        grid-column: 1/5;
+      }
+
+      &:nth-child(3) {
+        grid-column: 5/7;
+        margin-top: 200px;
+      }
+
+      &:nth-child(4) {
+        margin-top: 400px;
+        grid-column: 1/3;
+      }
+
+      &:nth-child(5) {
+        grid-column: 3/7;
+      }
+
+      .img {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+
+        img {
+          max-width: 100%;
+          position: relative;
+        }
+      }
+
+      .txt {
+        // overflow: hidden;
+        // width: 0;
+
+        h4 {
+          margin-top: 28px;
+          font-weight: 400;
+          font-size: 38px;
+        }
+
+        p {
+          margin-top: 3px;
+          font-weight: 400;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+}
+
+.skills {
+  h2 {
+    font-family: $accent-font;
+    text-align: center;
+    font-weight: 400;
+    font-size: 80px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    li {
+      opacity: 0.5;
+      transition: .3s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.represent {
+  .title {
+  margin-bottom: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $accent-font;
+    h2 {
+      font-size: 80px;
+    }
+
+    p {
+      margin-top: 24px;
+      font-size: 30px;
+    }
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-radius: 10px;
+      border: 4px solid #C6FFD2;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 0px 14px 2px #79FA5D;
+      }
+
+      .dot-wrap {
+        i {
+          width: 8px;
+          height: 8px;
+          border-radius: 100%;
+          background: #D9D9D9;
+          display: block;
+          position: absolute;
+
+          &:nth-child(1) {
+            top: 10px;
+            left: 10px;
+          }
+
+          &:nth-child(2) {
+            top: 10px;
+            right: 10px;
+          }
+
+          &:nth-child(3) {
+            bottom: 10px;
+            left: 10px;
+          }
+
+          &:nth-child(4) {
+            bottom: 10px;
+            right: 10px;
+          }
+        }
+
+
+      }
+
+      .three,
+      .txt {
+        background: #181818;
+        border-radius: 10px;
+      }
+
+      .three {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        position: relative;
+
+        canvas {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          min-height: 100%;
+          // width: 100%!important;
+          // height: 100%!important;
+          display: block;
+        }
+      }
+
+      .txt {
+        padding: 25px 35px;
+        position: relative;
+
+        h3 {
+          font-weight: 700;
+          font-size: 18px;
+          color: #79FA5D
+        }
+
+        p {
+          font-size: 16px;
+          color: #fff;
+        }
       }
     }
   }

@@ -20,11 +20,12 @@
         align-items: center;
         flex-direction: column;
     }
-
     .code {
         margin-top: 12vh;
         margin-bottom: 60px;
         color: #6ED567;
+        width: 1005px;
+        height: 252px;
 
         p {
             line-height: 1.5;
@@ -127,8 +128,9 @@
             display: block;
             width: 100%;
             height: calc(100vh / 40);
-            background:#fff;
+            background: #fff;
             position: relative;
+
             &:nth-child(even) {
                 background: red;
             }
@@ -140,17 +142,20 @@
     @keyframes animate {
         0% {
             transform: translateY(0) skew(0)
-
         }
+
         30% {
             transform: skew(0)
         }
+
         30% {
             transform: skew(45deg)
         }
+
         30% {
             transform: skew(0)
         }
+
         100% {
             transform: translateY(-100%);
         }

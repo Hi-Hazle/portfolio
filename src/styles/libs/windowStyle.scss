@@ -102,10 +102,13 @@ input[type="reset"]:disabled,
 
 .window {
   box-shadow: $border-window-outer, $border-window-inner;
-  // background: $surface;
+  background: $surface;
   
-  background: rgba(0,0,0,0.76);
+  // background: rgba(0,0,0,0.76);
   padding: 3px;
+  color: #000;
+  font-size: 16px;
+  letter-spacing:normal
 }
 
 .title-bar {

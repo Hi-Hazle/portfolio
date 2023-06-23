@@ -1,10 +1,15 @@
 <template>
+  <!-- <AppHeader /> -->
   <section ref="scroller" id="scroller">
     <LoaderWrap />
+    <AppFooter />
   </section>
 </template>
 
 <script setup>
+import AppHeader from "components/common/AppHeader.vue";
+import AppFooter from "components/common/AppFooter.vue";
+
 import LoaderWrap from "./loader/LoaderWrap.vue";
 import { useScrollerStore } from "@/stores/scroller";
 const store = useScrollerStore();
